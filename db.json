@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "employeedb": [
+    {
+      "id": 1,
+      "firstName": "Sophie",
+      "lastName": "Sandamele",
+      "email": "sophie@gmail.com",
+      "phoneNumber": "0731331189",
+      "salary": "7000"
+    },
+    {
+      "id": 4,
+      "firstName": "Alex",
+      "lastName": "Doe",
+      "email": "johndoe@gmail.com",
+      "phoneNumber": "0723654812",
+      "salary": "4000"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

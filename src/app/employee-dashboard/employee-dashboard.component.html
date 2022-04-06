@@ -1,0 +1,65 @@
+<nav class="navbar navbar-right bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue">Angular Crud</h1>
+        <div class="d-flex">
+            <button class="btn btn-success">Add Employee</button>
+        </div>
+    </div>
+</nav>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <td scope="col">Employee ID</td>
+            <td scope="col">First Name</td>
+            <td scope="col">Last Name</td>
+            <td scope="col">Email ID</td>
+            <td scope="col">Mobile No.</td>
+            <td scope="col">Salary</td>
+            <td scope="col">Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of employeeData">
+            <td>{{ row.id }}</td>
+            <td>{{ row.firstName }}</td>
+            <td>{{ row.lastName }}</td>
+            <td>{{ row.email }}</td>
+            <td>{{ row.phoneNumber }}</td>
+            <td>R {{ row.salary }}</td>
+
+            <td>
+                <button class="btn btn-info" (click)="onEdit(row)">Edit</button>
+                <button class="btn btn-danger mx-3" (click)="deleteEmployee(row)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="container">
+    <form [formGroup]="formValue">
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" formControlName="firstName" aria-describedby="emailHelp">
+          </div><div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Phone Number</label>
+            <input type="email" class="form-control" formControlName="phoneNumber" aria-describedby="emailHelp">
+          </div>
+        <div class="mb-3">
+          <label for="salary" class="form-label">Salary</label>
+          <input type="email" class="form-control" formControlName="salary" aria-describedby="emailHelp">
+        </div>       
+      </form>
+      <button type="button" class="btn btn-primary" (click)="postEmployeeDetails()">Add</button>
+      <button type="button" class="btn btn-primary" (click)="updateEmployeeDetails()">Update</button>
+
+</div>
+
